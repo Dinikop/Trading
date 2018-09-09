@@ -10,9 +10,14 @@ import java.util.List;
 
 public class CandleCollection {
 
+    private String ticket;
+
     private List<Candle> candles = new ArrayList<>();
 
-    public CandleCollection(String fileName) {
+    public CandleCollection(String fileName, String ticket) {
+
+        this.ticket = ticket;
+
         Path pathFile = Paths.get(fileName);
 
         List<String> content = new ArrayList<>();
@@ -31,5 +36,23 @@ public class CandleCollection {
 
     public List<Candle> getCandles() {
         return Collections.unmodifiableList(candles);
+    }
+
+    public String getTicket() {
+        return ticket;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(ticket);
+        sb.append("\n");
+
+        for (Candle candle :candles) {
+            sb.append(candle);
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
 }

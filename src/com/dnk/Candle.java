@@ -87,4 +87,17 @@ public class Candle {
     public int hashCode() {
         return Objects.hash(DATE, TIME, OPEN, HIGH, LOW, CLOSE, VOL);
     }
+
+    @Override
+    public String toString() {
+        return "Candle{" +
+                "DATE='" + DATE + '\'' +
+                ", TIME='" + TIME + '\'' +
+                ", OPEN=" + OPEN +
+                ", HIGH=" + HIGH +
+                ", LOW=" + LOW +
+                ", CLOSE=" + CLOSE +
+                ", VOL=" + VOL +
+                '}';
+    }
 }
