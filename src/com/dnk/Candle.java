@@ -1,5 +1,7 @@
 package com.dnk;
 
+import java.util.Objects;
+
 public class Candle {
     private final String DATE;
     private final String TIME;
@@ -65,5 +67,24 @@ public class Candle {
 
     public int getVOL() {
         return VOL;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Candle candle = (Candle) o;
+        return Float.compare(candle.OPEN, OPEN) == 0 &&
+                Float.compare(candle.HIGH, HIGH) == 0 &&
+                Float.compare(candle.LOW, LOW) == 0 &&
+                Float.compare(candle.CLOSE, CLOSE) == 0 &&
+                VOL == candle.VOL &&
+                Objects.equals(DATE, candle.DATE) &&
+                Objects.equals(TIME, candle.TIME);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(DATE, TIME, OPEN, HIGH, LOW, CLOSE, VOL);
     }
 }
