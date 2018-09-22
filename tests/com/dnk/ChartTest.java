@@ -6,11 +6,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+public class ChartTest {
 
-public class CandleCollectionTest {
-
-    private CandleCollection candles = new CandleCollection("E:\\DEV\\Trading\\tests\\resources\\testCreateCandleCollection.txt");
+    private Chart candles = new Chart("E:\\DEV\\Trading\\tests\\resources\\testCreateCandleCollection.txt", "EURUSD");
 
     @Test
     public void getCandles() {
@@ -24,5 +22,20 @@ public class CandleCollectionTest {
         expected.add(new Candle("20170909,000000,1.2035000,1.2035000,1.2035000,1.2035000,1"));
 
         Assert.assertEquals(actually, expected);
+    }
+
+    @Test
+    public void getChartSizeTest() {
+        Assert.assertEquals(3, candles.getCandles().size());
+    }
+
+    @Test
+    public void getDatesTest() {
+        List<String> expected = new ArrayList<>();
+        expected.add("20170907");
+        expected.add("20170908");
+        expected.add("20170909");
+
+        Assert.assertEquals(expected, candles.getDates());
     }
 }

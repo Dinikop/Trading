@@ -65,4 +65,9 @@ public class CandleTest {
         Assert.assertEquals(candleX.hashCode(), candleY.hashCode());
 
     }
+
+    @Test
+    public void toStringTest() {
+
+    }
 }
