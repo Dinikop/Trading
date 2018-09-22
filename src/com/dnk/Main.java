@@ -20,7 +20,7 @@ public class Main {
         Chart USDJPY = new Chart("E:\\Котировки\\Экспорт из MT4\\USDJPY1440.csv", "USDJPY");
 
 
-        System.out.println("Charts sizes: ");
+        System.out.println("Charts sizes: ===========================");
 
         System.out.println("EURUSD " + EURUSD.getChartSize());
         System.out.println("CHFJPY " + CHFJPY.getChartSize());
@@ -33,17 +33,16 @@ public class Main {
         System.out.println("USDCHF " + USDCHF.getChartSize());
         System.out.println("USDJPY " + USDJPY.getChartSize());
 
-        System.out.println();
+        System.out.println("End chart sizes ==========================");
 
         List<String> EURUSDDates = EURUSD.getDates();
         List<String> EURCHFDates = EURCHF.getDates();
         List<String> CHFJPYDates = CHFJPY.getDates();
 
-
-        for (int i = 0; i < EURUSDDates.size(); i++) {
-            if (!EURUSDDates.equals(CHFJPYDates)) {
-                System.out.println(EURUSDDates.get(i) + " " + CHFJPYDates.get(i));
-            }
-        }
+//        for (int i = 0; i < EURUSDDates.size(); i++) {
+//            if (!EURUSDDates.equals(CHFJPYDates)) {
+//                System.out.println(EURUSDDates.get(i) + " " + CHFJPYDates.get(i));
+//            }
+//        }
     }
 }

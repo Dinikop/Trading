@@ -9,6 +9,10 @@ import java.util.List;
 public class ChartTest {
 
     private Chart candles = new Chart("E:\\DEV\\Trading\\tests\\resources\\testCreateCandleCollection.txt", "EURUSD");
+    private Chart sameDates = new Chart("E:\\DEV\\Trading\\tests\\resources\\testCreateChartWithSameDates.txt", "");
+    private Chart differentDates = new Chart("E:\\DEV\\Trading\\tests\\resources\\testCreateChartWithDifferentDates.txt", "");
+    private Chart differentNumbersCandles = new Chart("E:\\DEV\\Trading\\tests\\resources\\testCreateChartWithDifferentNumberCandles.txt", "");
+
 
     @Test
     public void getCandles() {
@@ -37,5 +41,12 @@ public class ChartTest {
         expected.add("20170909");
 
         Assert.assertEquals(expected, candles.getDates());
+    }
+
+    @Test
+    public void equalsDates() {
+        Assert.assertTrue(candles.equalsDates(sameDates));
+        Assert.assertFalse(candles.equalsDates(differentDates));
+        Assert.assertFalse(candles.equalsDates(differentNumbersCandles));
     }
 }

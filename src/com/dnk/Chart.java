@@ -69,7 +69,20 @@ public class Chart {
     }
 
     public boolean equalsDates(Chart anotherChart) {
-        return false;
+        boolean flag = true;
+
+        if (this.getChartSize() != anotherChart.getChartSize()) return false;
+
+        else {
+
+            for (int i = 0; i < this.getChartSize(); i++) {
+                String thisDate = this.getDates().get(i);
+                String anotherChartDate = anotherChart.getDates().get(i);
+                flag = flag && thisDate.equals(anotherChartDate);
+            }
+
+        }
+        return flag;
     }
 
 //    public void equatingDimensions(Chart anotherChart) {

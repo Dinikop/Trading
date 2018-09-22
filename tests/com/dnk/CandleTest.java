@@ -68,6 +68,6 @@ public class CandleTest {
 
     @Test
     public void toStringTest() {
-
+        Assert.assertEquals(candle.toString(), "Candle{DATE='20170907', TIME='000000', OPEN=1.19158, HIGH=1.20597, LOW=1.1913, CLOSE=1.202, VOL=1894644}");
     }
 }
